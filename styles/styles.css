@@ -1,4 +1,4 @@
-@import 'normalize';
+@import 'normalize.css';
 
 /* General */
 
@@ -121,7 +121,7 @@ input::-webkit-input-placeholder {
   color: #909090;
 }
 
-#contact > input:last-child {
+#contact > div:last-child input {
   width: 50%;
 }
 
@@ -161,7 +161,6 @@ input[type="radio"]
 .reset_button,
 .submit_button {
   border: none;
-  width: 100%;
   border-radius: 5px;
   color: white;
   font-size: 1.1em;
@@ -187,10 +186,12 @@ input[type="radio"]
   text-align: center;
 }
 
+textarea,
 input {
   transition: background-color 1s;
 }
 
+textarea:focus,
 input:focus {
   outline: none !important;
   border: 2px solid #003366 !important;
@@ -199,10 +200,10 @@ input:focus {
 
 /** Desktop **/
 
-@media screen and (min-width: 768px) {
+@media (min-width: 760px) {
 
   .container {
-    width: 55%;
+    width: 65%;
     margin: auto;
   }
   
@@ -219,8 +220,23 @@ input:focus {
     padding-top: 0px;
   }
 
-  #contact > input:last-child {
-    width: 35%;
+  #contact > div {
+    margin: 30px 0;
+    clear: both;
   }
 
-}
+  #contact label {
+    float: left;
+    width: 30%;
+  }
+
+  #contact input,
+  #contact select {
+    float: left;
+    width: 70%;
+  }
+
+  #contact > div:last-child > input {
+    width: 30%;
+    float:left;
+  }
